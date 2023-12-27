@@ -13,16 +13,16 @@
        <div class="rating">
     <form method="post" id="survey-form">
       <fielddset>
-      <label for='name'> Enter your name<input id='name' name="name" placeholder="Enter your name...." type="text" required/> </label
-      <label for='email'> Enter your email<input name="email"id='email' type='email' placeholder="Enter your email...." required/> </label>
-      <label>Enter a number <input id='number' type="number" min="0" max="10" type=
+      <label for='name' id="name-label"> Enter your name<input id='name' name="name" placeholder="Enter your name...." type="text" required/> </label
+      <label for='email' id='email-label'> Enter your email<input name="email"id='email' type='email' placeholder="Enter your email...." required/> </label>
+      <label id='number-label'>Enter a number <input id='number' type="number" min="0" max="10" type=
       "number" placeholder="Rate us...."/>
       </label>
       </fieldset>
 
  <fieldset>
    <label> What branch are you in?</label>
- <select>
+ <select id="dropdown">
      <option value="1">Buea</option>
      <option value="2">Douala </option>
      <option value="3">Bamenda </option>
@@ -30,14 +30,14 @@
    </fieldset>
 
    
-      <fieldset>
-        <legend>Status(required)</legend>
-        <label for="personal-account"><input id="personal-account" type="radio" name="account-type" class="inline" checked 
+      <fieldset class="radio">
+        <legend class="status">Status(required)</legend>
+        <label for="personal-account"><input id="personal-account" type="radio" value='1' name="account-type" class="inline" checked 
         />Student
         </label>
-        <label for="business-account"><input id="business-account" type="radio" name="account-type" class="inline" /> Worker
+        <label for="business-account"><input id="business-account" type="radio" value='2'name="account-type" class="inline" /> Worker
         </label> 
-        <label for="other"><input id="other" type="radio" name="account-type" class="inline" />Other</label>
+        <label for="other"><input id="other" type="radio" value='3' name="account-type" class="inline" />Other</label>
 
       </fieldset>
     <p> Who served you? </p>
@@ -50,20 +50,25 @@
       <label>Rate them from 1 to 10 
       (bad to excellent) <input id='number' type="number" min="0" max="10" placeholder="Rate your server...."/>
    <fieldset>
-     <label for="referrer">How did you hear about us?
-       <p value="">From a friend,colleague</p>
-       <p>From the radio</p>
-       <p>On social media</p>
-       <p>Other</p>
-        
+     <label for="referrer" >
+       
+       <p>How did you hear about us?</p>
+ <div class="source">
+      <p><input type="checkbox" value="1" />From a friend/colleague</p>
+     <p><input type="checkbox" value="2"/>From social media</p>
+    <p><input type="checkbox" value="3"  />Others</p>
+       
+    
+        </div>
         </label>
+        
         <label for="bio">
           <textarea id="bio" name="bio" rows="3" cols="30" placeholder=""></textarea>
         </label>
       </fieldset>
     
-      <input type="submit" value="Submit" />
-        </fieldset>
+      <input id="submit" type="submit" value="Submit" />
+        
       </form>
       </div>
     </body>

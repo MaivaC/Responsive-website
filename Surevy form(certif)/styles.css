@@ -1,85 +1,75 @@
-body {
-  
-    background-image: url(https://www.camer237.com/wp-content/uploads/2020/01/The-Famous-Restaurant-Yaounde-Cameroun.jpg);
-    font-family: Tahoma;
-    font-size: 16px;
-  }
-  
-  .rating{
-    width: 80%;
-    background-color: rgba(230,231,17,0.8);
-    margin-left: auto;
-    margin-right: auto;
-    padding: 20px;
-    max-width: 500px;
-  }
-  
-  h1, p {
-    margin: 1em auto;
-    text-align: center;
-    color:rgb(255,255,255)
-  }
-  .description{
-  
-  }
-  
-  form {
-    width: 60vw;
-    max-width: 500px;
-    min-width: 300px;
-    margin: 0 auto;
-    padding-bottom: 2em;
-  }
-  
-  fieldset {
-    border: none;
-    padding: 2rem 0;
-    border-bottom: 3px solid #3b3b4f;
-  }
-  
-  fieldset:last-of-type {
-    border-bottom: none;
-  }
-  
-  label {
-    display: block;
-    margin: 0.5rem 0;
-  }
-  
-  input,
-  textarea,
-  select {
-    margin: 10px 0 0 0;
-    width: 100%;
-    min-height: 2em;
-  }
-  
-  input, textarea {
-    background-color: #0a0a23;
-    border: 1px solid #0a0a23;
-    color: #ffffff;
-  }
-  
-  .inline {
-    width: unset;
-    margin: auto;
-    vertical-align: middle;
-  
-  }
-  
-  input[type="submit"] {
-    display: block;
-    width: 60%;
-    margin: 1em auto;
-    height: 2em;
-    font-size: 1.1rem;
-    background-color: rgb(o,o,o));
-    border-color: white;
-    min-width: 300px;
-  }
-  
-  
-  
-  
-  
-  
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SURVEY FORM</title>
+    <link href="styles.css" rel="stylesheet"/>
+  </head>
+  <body>
+ 
+    <h1 id="title">CUSTOMER SATISFACTION SURVEY</h1>
+    <p id="description"> On a scaleof 1 to 10,we will like to know if you were satified.</p>
+       <div class="rating">
+    <form method="post" id="survey-form">
+      <fielddset>
+      <label for='name' id="name-label"> Enter your name<input id='name' name="name" placeholder="Enter your name...." type="text" required/> </label
+      <label for='email' id='email-label'> Enter your email<input name="email"id='email' type='email' placeholder="Enter your email...." required/> </label>
+      <label id='number-label'>Enter a number <input id='number' type="number" min="0" max="10" type=
+      "number" placeholder="Rate us...."/>
+      </label>
+      </fieldset>
+
+ <fieldset>
+   <label> What branch are you in?</label>
+ <select id="dropdown">
+     <option value="1">Buea</option>
+     <option value="2">Douala </option>
+     <option value="3">Bamenda </option>
+   </select>
+   </fieldset>
+
+   
+      <fieldset class="radio">
+        <legend class="status">Status(required)</legend>
+        <label for="personal-account"><input id="personal-account" type="radio" value='1' name="account-type" class="inline" checked 
+        />Student
+        </label>
+        <label for="business-account"><input id="business-account" type="radio" value='2'name="account-type" class="inline" /> Worker
+        </label> 
+        <label for="other"><input id="other" type="radio" value='3' name="account-type" class="inline" />Other</label>
+
+      </fieldset>
+    <p> Who served you? </p>
+     <select>
+     <option value="1">Server1</option>
+     <option value="2">Server2</option>
+     <option value="3">Server3</option>
+   </select>
+    
+      <label>Rate them from 1 to 10 
+      (bad to excellent) <input id='number' type="number" min="0" max="10" placeholder="Rate your server...."/>
+   <fieldset>
+     <label for="referrer" >
+       
+       <p>How did you hear about us?</p>
+ <div class="source">
+      <p><input type="checkbox" value="1" />From a friend/colleague</p>
+     <p><input type="checkbox" value="2"/>From social media</p>
+    <p><input type="checkbox" value="3"  />Others</p>
+       
+    
+        </div>
+        </label>
+        
+        <label for="bio">
+          <textarea id="bio" name="bio" rows="3" cols="30" placeholder=""></textarea>
+        </label>
+      </fieldset>
+    
+      <input id="submit" type="submit" value="Submit" />
+        
+      </form>
+      </div>
+    </body>
+    </html>
