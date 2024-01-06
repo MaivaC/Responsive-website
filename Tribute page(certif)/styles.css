@@ -1,0 +1,43 @@
+.heading{
+    text-align:center;
+    padding-top:30px;
+    }
+    #inside{
+    padding-bottom:5px;
+    }
+    #image{
+      max-width:100%;
+      height:auto;
+      width:80%;
+    justify-content:center;
+      display:flex;
+      align-items:center;
+    }
+    body{
+      background-color:rgb(217, 221, 220);
+    }
+    img{
+      display:block;
+    }
+    #img-div{
+      background-color:white;
+    }
+    .tribute{
+      font-size:20px;
+      font-weight:700;
+      padding-top:50px;
+    }
+    
+    .motivation{
+      padding-top:50px;
+      font-weight:500;
+    }
+    .life{
+    font-size:20px;
+      text-align:center;
+      padding-top:30px;
+      padding-bottom:30px;
+    }
+    .bold{
+      font-weight:700;
+    }
