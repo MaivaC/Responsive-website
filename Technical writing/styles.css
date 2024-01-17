@@ -1,0 +1,21 @@
+header{
+    font-size:50px;
+    color:rgb(70,34,255);
+  }
+  .quote{
+    font-size:20px;
+    color:rgb(70,34,255);
+  }
+  .nav-link{
+    font-size:30px;
+    text-decoration:none;
+  }
+  #navbar{
+    position:sticky;
+  }
+  @media(max-width:350px){
+    #nav-bar{
+      width:350px;
+    }
+    }
+  

@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8"/>
+     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href='styles.css'/>
+    <title>Technical documentation page</title>
+    </head>
+    <body>
+      <main id="main-doc">
+        <section class="main-section" id="Introduction">
+          <header>Introduction</header>
+<h1>What is Python? Executive Summary</h1>
+
+<p>Python is an interpreted, object-oriented, high-level programming language with dynamic semantics. Its high-level built in data structures, combined with dynamic typing and dynamic binding, make it very attractive for Rapid Application Development, as well as for use as a scripting or glue language to connect existing components together. Python's simple, easy to learn syntax emphasizes readability and therefore reduces the cost of program maintenance. Python supports modules and packages, which encourages program modularity and code reuse. The Python interpreter and the extensive standard library are available in source or binary form without charge for all major platforms, and can be freely distributed.</p>
+
+<p>Often, programmers fall in love with Python because of the increased productivity it provides. Since there is no compilation step, the edit-test-debug cycle is incredibly fast.</p> Debugging Python programs is easy: a bug or bad input will never cause a segmentation fault.</br> Instead, when the interpreter discovers an error, it raises an exception. When the program doesn't catch the exception, the interpreter prints a stack trace. A source level debugger allows inspection of local and global variables, evaluation of arbitrary expressions, setting breakpoints, stepping through the code a line at a time, and so on. The debugger is written in Python itself, testifying to Python's introspective power. On the other hand, often the quickest way to debug a program is to add a few print statements to the source: the fast edit-test-debug cycle makes this simple approach very effective. 
+        </section>
+        <section class="main-section" id="Why_Documenting_Your_Code_Is_So_Important">
+   <header>Why Documenting Your Code Is So Important</header>
+   <p>When you write code, you write it for two primary audiences: <li>Your users</li>
+    <li>Your developers (including yourself).</li></p>
+    <p>Both audiences are equally important. If you’re like me, you’ve probably opened up old codebases and wondered to yourself, “What in the world was I thinking?” If you’re having a problem reading your own code, imagine what your users or other developers are experiencing when they’re trying to use or contribute to your code.</p>
+<p>
+Conversely, I’m sure you’ve run into a situation where you wanted to do something in Python and found what looks like a great library that can get the job done. However, when you start using the library, you look for examples, write-ups, or even official documentation on how to do something specific and can’t immediately find the solution.</p>
+<p>
+After searching, you come to realize that the documentation is lacking or even worse, missing entirely. This is a frustrating feeling that deters you from using the library, no matter how great or efficient the code is. Daniele Procida summarized this situation best:</p>
+
+   <span class="quote"> “It doesn’t matter how good your software is, because if the documentation is not good enough, people will not use it.“</span>
+          </section>
+           <section class="main-section" id="commenting_vs_documenting_code">
+          <header>Commenting vs Documenting Code</header>
+         <p> In general, commenting is describing your code to/for developers. The intended main audience is the maintainers and developers of the Python code. In conjunction with well-written code, comments help to guide the reader to better understand your code and its purpose and design:</p>
+
+  <span class="quote">  “Code tells you how; Comments tell you why.”
+
+    — Jeff Atwood (aka Coding Horror)</span>
+<p>
+Documenting code is describing its use and functionality to your users. While it may be helpful in the development process, the main intended audience is the users. The following section describes how and when to comment your code.</p>
+Basics of Commenting Code
+
+<li>Comments are created in Python using the pound sign (#)</li> 
+<li>They should be brief statements no longer than a few sentences.</li>
+<p>Here’s a simple example:</p>
+<code>
+def hello_world():
+    # A simple comment preceding a simple print statement
+    print("Hello World")
+    </code>
+
+<p>According to PEP 8, comments should have a maximum length of 72 characters. This is true even if your project changes the max line length to be greater than the recommended 80 characters. If a comment is going to be greater than the comment char limit, using multiple lines for the comment is appropriate:</p>
+<code>
+def hello_long_world():
+    # A very long statement that just goes on and on and on and on and
+    # never ends until after it's reached the 80 char limit
+    print("Hellooooooooooooooooooooooooooooooooooooooooooooooooooooooo World")
+</code>
+<p>Comments to your code should be kept brief and focused. Avoid using long comments when possible.</p>
+<h1>Commenting Code via Type Hinting (Python 3.5+)</h1>
+
+<p>Type hinting was added to Python 3.5 and is an additional form to help the readers of your code. In fact, it takes Jeff’s fourth suggestion from above to the next level. It allows the developer to design and explain portions of their code without commenting. Here’s a quick example:</p>
+<code>
+def hello_name(name: str) -> str:
+    return(f"Hello {name}")</code>
+
+          </section>
+           <section class="main-section" id="Documenting_Your_Python_Code_Base_Using_Docstrings">
+          <header>Documenting Your Python Code Base Using Docstrings</header>
+          <p>Now that we’ve learned about commenting, let’s take a deep dive into documenting a Python code base. In this section, you’ll learn about docstrings and how to use them for documentation. This section is further divided into the following sub-sections:</p>
+<ol>
+   <li> Docstrings Background: A background on how docstrings work internally within Python</li>
+    <li>Docstring Types: The various docstring “types” (function, class, class method, module, package, and script)</li>
+    <li>Docstring Formats: The different docstring “formats” (Google, NumPy/SciPy, reStructuredText, and Epytext)</li>
+
+    </ol>
+<h2>Docstring background</h2>
+<p>Manipulation of custom objects</p>
+<code>def say_hello(name):
+    print(f"Hello {name}, is it me you're looking for?")
+
+say_hello.__doc__ = "A simple function that says hello... Richie style"</code>
+          </section>
+           <section class="main-section" id="Documenting_Your_Python_Projects">
+          <header>Documenting Your Python Projects</header>
+         <p> Python projects come in all sorts of shapes, sizes, and purposes. The way you document your project should suit your specific situation. Keep in mind who the users of your project are going to be and adapt to their needs. Depending on the project type, certain aspects of documentation are recommended. The general layout of the project and its documentation should be as follows:</p>
+
+<code>
+├── project_root/</br>
+├── project/  # Project source code</br>
+├── docs/</br>
+├── README</br>
+├── HOW_TO_CONTRIBUTE</br>
+├── CODE_OF_CONDUCT</br>
+├── examples.py
+</code>
+</span>
+<p>Projects can be generally subdivided into three major types:</p> 
+<ul><li>Private</li>
+<li>Shared</li>
+<li>Public/Open Source.</li>
+          </section>
+           <section class="main-section" id="reference">
+          <header>Reference</header>
+     <a href="https://realpython.com/documenting-python-code/#why-documenting-your-code-is-so-important" >  Real Python</a>
+          </section>
+</main>
+       <nav id="navbar">
+         <header>Python Documentation</header>
+         <ol>
+         <li><a class="nav-link" href=
+         '#Introduction'>Introduction</a></li>
+         <li><a class="nav-link" href="#Why_Documenting_Your_Code_Is_So_Important">Why Documenting Your Code Is So Important</a></li>
+         <li><a class="nav-link" href="#commenting_vs_documenting_code">Commenting vs Documenting Code</a></li>
+         <li><a class="nav-link" href="#Documenting_Your_Python_Code_Base_Using_Docstrings">Documenting Your Python Code Base Using Docstrings</a></li>
+        <li> <a class="nav-link" href=
+        '#Documenting_Your_Python_Projects'>   Documenting Your Python Projects</a></li>
+     
+         <li><a class="nav-link" href='#reference'>Reference</a></li>
+         </ol>
+         </nav>
+      
+      </body>
+  </html>
